@@ -2,6 +2,7 @@
 //import { StrictMode } from 'react'  // commented default code given by the installation
 import { createRoot } from 'react-dom/client'
 import './index.css'  // commented default code given by the installation
+//import { Fragment } from 'react'  // necessary when using <Fragment> instead of <>
 //import App from './App.jsx' // used below; default code given by the installation
 
 // Commented default code given by the installation
@@ -129,9 +130,43 @@ root.render(
 )
 */
 
+// Fragments
+/*
+// Rendering needs wrapper like div
+// Problem: additional nest of div will be added to the html everytime that wrapped component with div will be rendered
 root.render (
   <div>
     <MyAwesomeNavbar />
     <MainContent />
   </div>
 )
+
+
+// Solution: Fragment, add the component without adding that extra div in the html
+root.render (
+  <Fragment>  // this needs the import Fragment above
+    <MyAwesomeNavbar />
+    <MainContent />
+  </Fragment>
+)
+
+// Shorthand React Fragment: the <>
+root.render (
+  <>
+    <MyAwesomeNavbar />
+    <MainContent />
+  </>
+)
+*/
+
+root.render (
+  <>
+    <MyAwesomeNavbar />
+    <MainContent />
+  </>
+)
+
+// Custom Components: Parent/Child Components
+// Reorganizing component: import and export
+// Initial Project Setup (at 28:21:12)
+// The React from the scratch ended here wherein the 3d Portfolio done was the same as presented at 28:21:12 of the video, the Initial Project Setup 
